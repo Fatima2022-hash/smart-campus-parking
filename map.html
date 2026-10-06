@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajman University Campus Map - Smart Parking</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="map-styles.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="topbar">
+            <div class="brand-wrap">
+                <div class="brand-icon">P</div>
+                <div>
+                    <div class="brand-name">Smart Campus Parking</div>
+                    <div class="brand-subtitle">Ajman University Live Map</div>
+                </div>
+            </div>
+
+            <nav id="mainNav" class="nav"></nav>
+
+            <button id="logoutBtn" class="logout" type="button">Logout</button>
+        </header>
+
+        <main class="map-container">
+            <div id="mapWrapper" class="map-wrapper">
+                <div id="campusMap" class="map"></div>
+                
+                <div class="map-overlay">
+                    <div class="legend-box">
+                        <h4>Campus Legend</h4>
+                        <div class="legend-item">
+                            <span class="legend-dot building-dot"></span>
+                            <span>Building</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot parking-available"></span>
+                            <span>Parking Available</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot parking-busy"></span>
+                            <span>Parking Busy</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot parking-full"></span>
+                            <span>Parking Full</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot gate-dot"></span>
+                            <span>Gate</span>
+                        </div>
+                    </div>
+
+                    <div class="info-panel">
+                        <h3>Campus Info</h3>
+                        <div id="campusStats">
+                            <div class="stat">
+                                <span class="label">Campus Occupancy:</span>
+                                <span id="occupancyText" class="value">--</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Open Spaces:</span>
+                                <span id="openSpacesText" class="value">--</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Last Updated:</span>
+                                <span id="updateTimeText" class="value">Just now</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-content">
+                    <h3>Parking Lots</h3>
+                    <div id="lotsList" class="lots-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map-script.js"></script>
+</body>
+</html>
